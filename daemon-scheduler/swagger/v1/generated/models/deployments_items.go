@@ -19,44 +19,42 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/swag"
 )
 
-// InstanceGroup Structure to group instances together
-// swagger:model InstanceGroup
-type InstanceGroup struct {
+// DeploymentsItems deployments items
+// swagger:model deploymentsItems
+type DeploymentsItems []*Deployment
 
-	// Cluster of instances, e.g. ECS Cluster
-	Cluster string `json:"cluster,omitempty"`
-}
-
-// Validate validates this instance group
-func (m *InstanceGroup) Validate(formats strfmt.Registry) error {
+// Validate validates this deployments items
+func (m DeploymentsItems) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	for i := 0; i < len(m); i++ {
+
+		if swag.IsZero(m[i]) { // not required
+			continue
+		}
+
+		if m[i] != nil {
+
+			if err := m[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName(strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-// MarshalBinary interface implementation
-func (m *InstanceGroup) MarshalBinary() ([]byte, error) {
-	if m == nil {
-		return nil, nil
-	}
-	return swag.WriteJSON(m)
-}
-
-// UnmarshalBinary interface implementation
-func (m *InstanceGroup) UnmarshalBinary(b []byte) error {
-	var res InstanceGroup
-	if err := swag.ReadJSON(b, &res); err != nil {
-		return err
-	}
-	*m = res
 	return nil
 }
