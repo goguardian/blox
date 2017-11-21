@@ -339,7 +339,8 @@
 		},
 		{
 			"ImportPath": "github.com/golang/mock/gomock",
-			"Rev": "bd3c8e81be01eef76d4b503f5e687d2d1354d2d9"
+			"Comment": "v1.0.0-50-ga18247b",
+			"Rev": "a18247b9451da0d13e80f7c3e320f1b101d7ea1e"
 		},
 		{
 			"ImportPath": "github.com/golang/protobuf/jsonpb",
