@@ -54,39 +54,39 @@ generate: $(SWAGGER_GEN) $(SOURCES)
 
 .PHONY: generate build-in-docker
 build-in-docker:
-	@docker build -f scripts/dockerfiles/Dockerfile.build -t "bloxoss/daemon-scheduler:make" .
+	@docker build -f scripts/dockerfiles/Dockerfile.build -t "goguardian/daemon-scheduler:make" .
 	@docker run --net=none \
 	    -v "$(shell pwd)/out:/out" \
 	    -v "$(shell pwd):/go/src/github.com/goguardian/blox/daemon-scheduler" \
 	    -v "$(shell dirname ${ROOT}):/go/src/github.com/goguardian/blox" \
-	    "bloxoss/daemon-scheduler:make"
+	    "goguardian/daemon-scheduler:make"
 
 .PHONY: certs
 certs: misc/certs/ca-certificates.crt
 misc/certs/ca-certificates.crt:
-	docker build -t "bloxoss/daemon-scheduler-cert-source:make" misc/certs/
-	docker run "bloxoss/daemon-scheduler-cert-source:make" cat /etc/ssl/certs/ca-certificates.crt > misc/certs/ca-certificates.crt
+	docker build -t "goguardian/daemon-scheduler-cert-source:make" misc/certs/
+	docker run "goguardian/daemon-scheduler-cert-source:make" cat /etc/ssl/certs/ca-certificates.crt > misc/certs/ca-certificates.crt
 
 .PHONY: docker
 docker: certs generate build-in-docker
 	@cd scripts && ./create-daemon-scheduler-scratch
-	@docker build -f scripts/dockerfiles/Dockerfile.release -t "bloxoss/daemon-scheduler:make" .
-	@echo "Built Docker image \"bloxoss/daemon-scheduler:make\""
+	@docker build -f scripts/dockerfiles/Dockerfile.release -t "goguardian/daemon-scheduler:make" .
+	@echo "Built Docker image \"goguardian/daemon-scheduler:make\""
 
 .PHONY: docker-release
 docker-release:
-	@docker build -f scripts/dockerfiles/Dockerfile.cleanbuild -t "bloxoss/daemon-scheduler-cleanbuild:make" .
-	@echo "Built Docker image \"bloxoss/daemon-scheduler-cleanbuild:make\""
+	@docker build -f scripts/dockerfiles/Dockerfile.cleanbuild -t "goguardian/daemon-scheduler-cleanbuild:make" .
+	@echo "Built Docker image \"goguardian/daemon-scheduler-cleanbuild:make\""
 	@docker run --net=none \
 	    -v "$(shell pwd)/out:/out" \
 	    -v "$(shell dirname ${ROOT}):/src/blox" \
-	    "bloxoss/daemon-scheduler-cleanbuild:make"
+	    "goguardian/daemon-scheduler-cleanbuild:make"
 
 .PHONY: release
 release: certs generate docker-release
 	@cd scripts && ./create-daemon-scheduler-scratch
-	@docker build -f scripts/dockerfiles/Dockerfile.release -t "bloxoss/daemon-scheduler:latest" .
-	@echo "Built Docker image \"bloxoss/daemon-scheduler:latest\""
+	@docker build -f scripts/dockerfiles/Dockerfile.release -t "goguardian/daemon-scheduler:latest" .
+	@echo "Built Docker image \"goguardian/daemon-scheduler:latest\""
 
 .PHONY: get-deps
 get-deps:

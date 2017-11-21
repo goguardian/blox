@@ -27,7 +27,7 @@ Errors encountered building the new Blox images or pushing them up to Docker Hub
 
 ## Hostname or Service
 GitHub: https://github.com/goguardian/blox  
-Docker Hub: https://hub.docker.com/u/bloxoss/
+Docker Hub: https://hub.docker.com/u/goguardian/
 
 ## Timeline / Activity Plan
 Times are relative to the start of the release.
@@ -58,7 +58,7 @@ Refer to the Validation Activities section for more details about each activity 
 - [ ] Ensure that the release-$$blox_version$$ branch contains the latest changes in the dev and master branch.
 - [ ] Ensure that the release-$$blox_version$$ branch commit hash is set to $$github_hash$$.
 - [ ] Ensure that the technician has a GitHub account and permissions to merge into the Blox dev and master branches.
-- [ ] Ensure that the technician has a Docker Hub account and permissions to push and remove images in the bloxoss repositories.
+- [ ] Ensure that the technician has a Docker Hub account and permissions to push and remove images in the goguardian repositories.
 - [ ] Ensure that the technician has logged into Docker Hub via `docker logout` and `docker login`.
 - [ ] Ensure that the technician has logged into ECR via `aws --region $$aws_region$$ ecr get-login`.
 - [ ] Ensure that the $$ecr_css_repo_uri$$ ECR repository has been created.
@@ -76,30 +76,30 @@ Refer to the Validation Activities section for more details about each activity 
 - [ ] Release activities:
 - [ ] Push the release-$$blox_version$$ branch up to the Github dev and master branches.
 - [ ] Publish the v$$blox_version$$ release in GitHub.
-- [ ] Publish the bloxoss/cluster-state-service:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub.
-- [ ] Publish the bloxoss/daemon-scheduler:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub.
+- [ ] Publish the goguardian/cluster-state-service:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub.
+- [ ] Publish the goguardian/daemon-scheduler:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub.
 - [ ] Log into the GitHub console and close the 'Release $$blox_version$$' milestone.
 
 ## Rollback Procedure
-- Log into the Docker Hub console and delete the bloxoss/cluster-state-service:latest,$$blox_version$$,$$github_hash$$ images.
-- Log into the Docker Hub console and delete the bloxoss/daemon-scheduler:latest,$$blox_version$$,$$github_hash$$ images.
-- Publish the bloxoss/cluster-state-service:latest tag pointed to the previous release.
-- Publish the bloxoss/daemon-scheduler:latest tag pointed to the previous release.
+- Log into the Docker Hub console and delete the goguardian/cluster-state-service:latest,$$blox_version$$,$$github_hash$$ images.
+- Log into the Docker Hub console and delete the goguardian/daemon-scheduler:latest,$$blox_version$$,$$github_hash$$ images.
+- Publish the goguardian/cluster-state-service:latest tag pointed to the previous release.
+- Publish the goguardian/daemon-scheduler:latest tag pointed to the previous release.
 - Revert Blox repository changes.
 - Log into the GitHub console and reopen the 'Release $$blox_version$$' milestone.
 
-#### Publish the bloxoss/cluster-state-service:latest tag pointed to the previous release
+#### Publish the goguardian/cluster-state-service:latest tag pointed to the previous release
 ```
-$ docker pull bloxoss/cluster-state-service:$$previous_version$$
-$ docker tag bloxoss/cluster-state-service:$$previous_version$$ bloxoss/cluster-state-service:latest
-$ docker push bloxoss/cluster-state-service:latest
+$ docker pull goguardian/cluster-state-service:$$previous_version$$
+$ docker tag goguardian/cluster-state-service:$$previous_version$$ goguardian/cluster-state-service:latest
+$ docker push goguardian/cluster-state-service:latest
 ```
 
-#### Publish the bloxoss/daemon-scheduler:latest tag pointed to the previous release
+#### Publish the goguardian/daemon-scheduler:latest tag pointed to the previous release
 ```
-$ docker pull bloxoss/daemon-scheduler:$$previous_version$$
-$ docker tag bloxoss/daemon-scheduler:$$previous_version$$ bloxoss/daemon-scheduler:latest
-$ docker push bloxoss/daemon-scheduler:latest
+$ docker pull goguardian/daemon-scheduler:$$previous_version$$
+$ docker tag goguardian/daemon-scheduler:$$previous_version$$ goguardian/daemon-scheduler:latest
+$ docker push goguardian/daemon-scheduler:latest
 ```
 
 #### Revert Blox repository changes
@@ -210,7 +210,7 @@ $ docker ps -a --no-trunc | grep 'daemon-scheduler' | awk '{print $1}' | xargs d
 $ echo $?
 0  <- should return 0
 
-$ docker images -a | grep 'bloxoss' | awk '{print $3}' | xargs docker rmi -f
+$ docker images -a | grep 'goguardian' | awk '{print $3}' | xargs docker rmi -f
 $ echo $?
 0  <- should return 0
 
@@ -228,7 +228,7 @@ $ echo $?
 $ git checkout release-$$blox_version$$
 $ cd <GitRepoBase>/cluster-state-service/
 $ make release
-$ docker tag bloxoss/cluster-state-service:latest $$ecr_css_repo_uri$$:$$blox_version$$
+$ docker tag goguardian/cluster-state-service:latest $$ecr_css_repo_uri$$:$$blox_version$$
 $ docker push $$ecr_css_repo_uri$$:$$blox_version$$
 ```
 
@@ -237,7 +237,7 @@ $ docker push $$ecr_css_repo_uri$$:$$blox_version$$
 $ git checkout release-$$blox_version$$
 $ cd <GitRepoBase>/daemon-scheduler/
 $ make release
-$ docker tag bloxoss/daemon-scheduler:latest $$ecr_ds_repo_uri$$:$$blox_version$$
+$ docker tag goguardian/daemon-scheduler:latest $$ecr_ds_repo_uri$$:$$blox_version$$
 $ docker push $$ecr_ds_repo_uri$$:$$blox_version$$
 ```
 
@@ -263,8 +263,8 @@ Required setup details are listed [here](https://github.com/goguardian/blox/blob
 $ docker ps | awk '{print $1}' | grep -v CONTAINER | xargs docker stop
 $ git checkout release-$$blox_version$$
 $ cd <GitRepoBase>/deploy/docker/conf/
-$ sed -i '' 's#bloxoss/cluster-state-service:$$blox_version$$#$$ecr_css_repo_uri$$:$$blox_version$$#g' docker-compose.yml
-$ sed -i '' 's#bloxoss/daemon-scheduler:$$blox_version$$#$$ecr_ds_repo_uri$$:$$blox_version$$#g' docker-compose.yml
+$ sed -i '' 's#goguardian/cluster-state-service:$$blox_version$$#$$ecr_css_repo_uri$$:$$blox_version$$#g' docker-compose.yml
+$ sed -i '' 's#goguardian/daemon-scheduler:$$blox_version$$#$$ecr_ds_repo_uri$$:$$blox_version$$#g' docker-compose.yml
 $ sed -i '' 's/<region>/$$aws_region$$/g' docker-compose.yml
 $ docker-compose up -d
 $ docker ps
@@ -308,83 +308,83 @@ Ensure the following details:
 Click: Publish release
 ```
 
-#### Publish the bloxoss/cluster-state-service:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub
+#### Publish the goguardian/cluster-state-service:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub
 ```
 $ docker pull $$ecr_css_repo_uri$$:$$blox_version$$
-$ docker tag $$ecr_css_repo_uri$$:$$blox_version$$ bloxoss/cluster-state-service:latest
-$ docker tag $$ecr_css_repo_uri$$:$$blox_version$$ bloxoss/cluster-state-service:$$blox_version$$
-$ docker tag $$ecr_css_repo_uri$$:$$blox_version$$ bloxoss/cluster-state-service:$$github_hash$$
-$ docker push bloxoss/cluster-state-service:latest
-$ docker push bloxoss/cluster-state-service:$$blox_version$$
-$ docker push bloxoss/cluster-state-service:$$github_hash$$
+$ docker tag $$ecr_css_repo_uri$$:$$blox_version$$ goguardian/cluster-state-service:latest
+$ docker tag $$ecr_css_repo_uri$$:$$blox_version$$ goguardian/cluster-state-service:$$blox_version$$
+$ docker tag $$ecr_css_repo_uri$$:$$blox_version$$ goguardian/cluster-state-service:$$github_hash$$
+$ docker push goguardian/cluster-state-service:latest
+$ docker push goguardian/cluster-state-service:$$blox_version$$
+$ docker push goguardian/cluster-state-service:$$github_hash$$
 ```
 
-#### Publish the bloxoss/daemon-scheduler:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub
+#### Publish the goguardian/daemon-scheduler:latest,$$blox_version$$,$$github_hash$$ images to Docker Hub
 ```
 $ docker pull $$ecr_ds_repo_uri$$:$$blox_version$$
-$ docker tag $$ecr_ds_repo_uri$$:$$blox_version$$ bloxoss/daemon-scheduler:latest
-$ docker tag $$ecr_ds_repo_uri$$:$$blox_version$$ bloxoss/daemon-scheduler:$$blox_version$$
-$ docker tag $$ecr_ds_repo_uri$$:$$blox_version$$ bloxoss/daemon-scheduler:$$github_hash$$
-$ docker push bloxoss/daemon-scheduler:latest
-$ docker push bloxoss/daemon-scheduler:$$blox_version$$
-$ docker push bloxoss/daemon-scheduler:$$github_hash$$
+$ docker tag $$ecr_ds_repo_uri$$:$$blox_version$$ goguardian/daemon-scheduler:latest
+$ docker tag $$ecr_ds_repo_uri$$:$$blox_version$$ goguardian/daemon-scheduler:$$blox_version$$
+$ docker tag $$ecr_ds_repo_uri$$:$$blox_version$$ goguardian/daemon-scheduler:$$github_hash$$
+$ docker push goguardian/daemon-scheduler:latest
+$ docker push goguardian/daemon-scheduler:$$blox_version$$
+$ docker push goguardian/daemon-scheduler:$$github_hash$$
 ```
 
 #### Verify that doing a docker pull of all six tags works.
 ```
-$ docker pull bloxoss/cluster-state-service:latest
+$ docker pull goguardian/cluster-state-service:latest
 $ echo $?
 0  <- should return 0
 
-$ docker pull bloxoss/cluster-state-service:$$blox_version$$
+$ docker pull goguardian/cluster-state-service:$$blox_version$$
 $ echo $?
 0  <- should return 0
 
-$ docker pull bloxoss/cluster-state-service:$$github_hash$$
+$ docker pull goguardian/cluster-state-service:$$github_hash$$
 $ echo $?
 0  <- should return 0
 
-$ docker pull bloxoss/daemon-scheduler:latest
+$ docker pull goguardian/daemon-scheduler:latest
 $ echo $?
 0  <- should return 0
 
-$ docker pull bloxoss/daemon-scheduler:$$blox_version$$
+$ docker pull goguardian/daemon-scheduler:$$blox_version$$
 $ echo $?
 0  <- should return 0
 
-$ docker pull bloxoss/daemon-scheduler:$$github_hash$$
+$ docker pull goguardian/daemon-scheduler:$$github_hash$$
 $ echo $?
 0  <- should return 0
 ```
 
 #### Verify that doing a docker run of all six tags shows the correct version and commit hash
 ```
-$ docker run bloxoss/cluster-state-service:latest --version
+$ docker run goguardian/cluster-state-service:latest --version
 Blox Cluster State Service:
   Version: $$blox_version$$  <- Should show version '$$blox_version$$'
   Commit: $$github_hash$$  <- Should show commit '$$github_hash$$'
 
-$ docker run bloxoss/cluster-state-service:$$blox_version$$ --version
+$ docker run goguardian/cluster-state-service:$$blox_version$$ --version
 Blox Cluster State Service:
   Version: $$blox_version$$  <- Should show version '$$blox_version$$'
   Commit: $$github_hash$$  <- Should show commit '$$github_hash$$'
 
-$ docker run bloxoss/cluster-state-service:$$github_hash$$ --version
+$ docker run goguardian/cluster-state-service:$$github_hash$$ --version
 Blox Cluster State Service:
   Version: $$blox_version$$  <- Should show version '$$blox_version$$'
   Commit: $$github_hash$$  <- Should show commit '$$github_hash$$'
 
-$ docker run bloxoss/daemon-scheduler:latest --version
+$ docker run goguardian/daemon-scheduler:latest --version
 Blox Daemon Scheduler:
   Version: $$blox_version$$  <- Should show version '$$blox_version$$'
   Commit: $$github_hash$$  <- Should show commit '$$github_hash$$'
 
-$ docker run bloxoss/daemon-scheduler:$$blox_version$$ --version
+$ docker run goguardian/daemon-scheduler:$$blox_version$$ --version
 Blox Daemon Scheduler:
   Version: $$blox_version$$  <- Should show version '$$blox_version$$'
   Commit: $$github_hash$$  <- Should show commit '$$github_hash$$'
 
-$ docker run bloxoss/daemon-scheduler:$$github_hash$$ --version
+$ docker run goguardian/daemon-scheduler:$$github_hash$$ --version
 Blox Daemon Scheduler:
   Version: $$blox_version$$  <- Should show version '$$blox_version$$'
   Commit: $$github_hash$$  <- Should show commit '$$github_hash$$'
@@ -401,8 +401,8 @@ $ sed -i '' 's/<region>/$$aws_region$$/g' docker-compose.yml
 $ docker-compose up -d
 $ docker ps
 CONTAINER ID   IMAGE                                            STATUS
-70d2ca6c5de7   bloxoss/daemon-scheduler:$$blox_version$$        Up      <- Should show 'Up' and version '$$blox_version$$' 
-e2214884f981   bloxoss/cluster-state-service:$$blox_version$$   Up      <- Should show 'Up' and version '$$blox_version$$'
+70d2ca6c5de7   goguardian/daemon-scheduler:$$blox_version$$        Up      <- Should show 'Up' and version '$$blox_version$$' 
+e2214884f981   goguardian/cluster-state-service:$$blox_version$$   Up      <- Should show 'Up' and version '$$blox_version$$'
 088f0d7c20e8   quay.io/coreos/etcd:v3.x.y                       Up      <- Should show 'Up'
 ```
 
@@ -417,8 +417,8 @@ $ aws --region $$aws_region$$ cloudformation create-stack --stack-name BloxAws -
 # After CloudFormation Deployment completes, SSH into the EC2 instance created.
 $ docker ps
 CONTAINER ID   IMAGE                                            STATUS
-70d2ca6c5de7   bloxoss/daemon-scheduler:$$blox_version$$        Up      <- Should show 'Up' and version '$$blox_version$$' 
-e2214884f981   bloxoss/cluster-state-service:$$blox_version$$   Up      <- Should show 'Up' and version '$$blox_version$$'
+70d2ca6c5de7   goguardian/daemon-scheduler:$$blox_version$$        Up      <- Should show 'Up' and version '$$blox_version$$' 
+e2214884f981   goguardian/cluster-state-service:$$blox_version$$   Up      <- Should show 'Up' and version '$$blox_version$$'
 088f0d7c20e8   quay.io/coreos/etcd:v3.x.y                       Up      <- Should show 'Up'
 ```
 
