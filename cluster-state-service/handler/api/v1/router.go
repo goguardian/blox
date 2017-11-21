@@ -14,7 +14,7 @@
 package v1
 
 import (
-	"github.com/blox/blox/cluster-state-service/handler/regex"
+	"github.com/goguardian/blox/cluster-state-service/handler/regex"
 	"github.com/gorilla/mux"
 )
 

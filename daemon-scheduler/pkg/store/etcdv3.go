@@ -16,7 +16,7 @@ package store
 import (
 	"context"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/clients"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/clients"
 	etcd "github.com/coreos/etcd/clientv3"
 	"github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes"
 	"github.com/pkg/errors"

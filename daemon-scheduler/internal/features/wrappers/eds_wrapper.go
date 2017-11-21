@@ -18,9 +18,9 @@ import (
 	"errors"
 	"os"
 
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/client"
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/client/operations"
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/models"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/client"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/client/operations"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/models"
 	httptransport "github.com/go-openapi/runtime/client"
 )
 

@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/blox/blox/daemon-scheduler/versioning"
+	"github.com/goguardian/blox/daemon-scheduler/versioning"
 )
 
 const (

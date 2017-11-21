@@ -14,7 +14,7 @@
 package cmd
 
 import (
-	"github.com/blox/blox/cluster-state-service/config"
+	"github.com/goguardian/blox/cluster-state-service/config"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

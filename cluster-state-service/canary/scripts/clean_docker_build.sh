@@ -30,7 +30,7 @@ EOW
 [ ! -z "$(git status --porcelain)" ] && echo "$DIRTY_WARNING"
 
 # Fresh clone to ensure our build doesn't rely on anything outside of vcs
-git clone --quiet /src/blox /go/src/github.com/blox/blox
+git clone --quiet /src/blox /go/src/github.com/goguardian/blox
 
-cd /go/src/github.com/blox/blox/cluster-state-service/canary
+cd /go/src/github.com/goguardian/blox/cluster-state-service/canary
 exec ./scripts/build_binary.sh /out

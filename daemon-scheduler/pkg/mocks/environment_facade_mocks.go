@@ -17,7 +17,7 @@
 package mocks
 
 import (
-	"github.com/blox/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
 	gomock "github.com/golang/mock/gomock"
 )
 

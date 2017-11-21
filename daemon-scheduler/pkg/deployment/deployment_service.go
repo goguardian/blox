@@ -16,12 +16,12 @@ package deployment
 import (
 	"context"
 
-	deploymenttypes "github.com/blox/blox/daemon-scheduler/pkg/deployment/types"
-	environmenttypes "github.com/blox/blox/daemon-scheduler/pkg/environment/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/facade"
-	"github.com/blox/blox/daemon-scheduler/pkg/store"
-	storetypes "github.com/blox/blox/daemon-scheduler/pkg/store/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/types"
+	deploymenttypes "github.com/goguardian/blox/daemon-scheduler/pkg/deployment/types"
+	environmenttypes "github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/facade"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/store"
+	storetypes "github.com/goguardian/blox/daemon-scheduler/pkg/store/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/types"
 	"github.com/pkg/errors"
 )
 

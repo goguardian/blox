@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/service/ecs"
-	"github.com/blox/blox/cluster-state-service/handler/reconcile/loader"
-	"github.com/blox/blox/cluster-state-service/handler/store"
+	"github.com/goguardian/blox/cluster-state-service/handler/reconcile/loader"
+	"github.com/goguardian/blox/cluster-state-service/handler/store"
 	log "github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )

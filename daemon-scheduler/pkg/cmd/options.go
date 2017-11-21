@@ -14,7 +14,7 @@
 package cmd
 
 import (
-	"github.com/blox/blox/daemon-scheduler/pkg/config"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/config"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

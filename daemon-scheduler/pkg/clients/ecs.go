@@ -19,7 +19,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ecs"
-	"github.com/blox/blox/daemon-scheduler/pkg/httpclient"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/httpclient"
 	"github.com/pkg/errors"
 )
 

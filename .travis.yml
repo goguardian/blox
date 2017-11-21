@@ -1,5 +1,5 @@
 language: go
-go_import_path: github.com/blox/blox
+go_import_path: github.com/goguardian/blox
 go:
   - 1.7
 install:

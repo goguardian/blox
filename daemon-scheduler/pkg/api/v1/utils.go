@@ -16,7 +16,7 @@ package v1
 import (
 	"net/http"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/types"
 	log "github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )

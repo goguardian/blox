@@ -17,7 +17,7 @@ The cluster-state-service API operations:
 The cluster-state-service depends on golang and go-swagger. Install and configure [golang](https://golang.org/doc/). For more information about installing go-swagger, see the [go-swagger documentation](https://github.com/go-swagger/go-swagger).
 
 ```
-$ git clone https://github.com/blox/blox.git blox/blox
+$ git clone https://github.com/goguardian/blox.git blox/blox
 $ cd blox/blox/cluster-state-service
 $ make get-deps
 $ make
@@ -49,7 +49,7 @@ docker run -e AWS_REGION=us-west-2 \
     AWS_PROFILE=default \
     -v ~/.aws:/.aws \
     -v /tmp/css-logs:/var/output/logs \
-    bloxoss/cluster-state-service:0.3.0 \
+    goguardian/cluster-state-service:0.3.0 \
     --etcd-endpoint $ETCD_IP:$ETCD_PORT \
     --queue_name $SQS_QUEUE_NAME
 ```
@@ -63,7 +63,7 @@ AWS_PROFILE=default \
     CSS_LOG_LEVEL=info \
     -v ~/.aws:/.aws \
     -v /tmp/css-logs:/var/output/logs \
-    bloxoss/cluster-state-service:0.3.0 \
+    goguardian/cluster-state-service:0.3.0 \
     --etcd-endpoint $ETCD_IP:$ETCD_PORT \
     --queue event_stream
 ```

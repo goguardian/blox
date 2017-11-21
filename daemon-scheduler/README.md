@@ -22,7 +22,7 @@ The daemon-scheduler API:
 The daemon-scheduler depends on golang and go-swagger. Install and configure [golang](https://golang.org/doc/). For more information about installing go-swagger, see the [go-swagger documentation](https://github.com/go-swagger/go-swagger).
 
 ```
-$ git clone https://github.com/blox/blox.git blox/blox
+$ git clone https://github.com/goguardian/blox.git blox/blox
 $ cd blox/blox/daemon-scheduler
 $ make get-deps
 $ make
@@ -48,7 +48,7 @@ docker run -e AWS_REGION=us-west-2 \
     AWS_PROFILE=default \
     -v ~/.aws:/.aws \
     -v /tmp/ds-logs:/var/output/logs \
-    bloxoss/daemon-scheduler:0.3.0 \
+    goguardian/daemon-scheduler:0.3.0 \
     --etcd-endpoint $ETCD_IP:$ETCD_PORT \
     --css-endpoint $CSS_IP:$CS_PORT
 ```

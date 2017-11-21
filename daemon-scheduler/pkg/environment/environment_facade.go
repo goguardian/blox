@@ -14,8 +14,8 @@
 package environment
 
 import (
-	"github.com/blox/blox/daemon-scheduler/pkg/environment/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/facade"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/facade"
 	"github.com/pkg/errors"
 )
 

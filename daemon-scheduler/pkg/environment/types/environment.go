@@ -16,7 +16,7 @@ package types
 import (
 	"sort"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/deployment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/deployment/types"
 	"github.com/pborman/uuid"
 	"github.com/pkg/errors"
 )

@@ -17,11 +17,11 @@ import (
 	"context"
 	"strings"
 
-	environmenttypes "github.com/blox/blox/daemon-scheduler/pkg/environment/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/store"
-	storetypes "github.com/blox/blox/daemon-scheduler/pkg/store/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/validate"
+	environmenttypes "github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/store"
+	storetypes "github.com/goguardian/blox/daemon-scheduler/pkg/store/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/validate"
 	log "github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )

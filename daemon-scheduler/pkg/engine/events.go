@@ -14,8 +14,8 @@
 package engine
 
 import (
-	"github.com/blox/blox/daemon-scheduler/pkg/deployment/types"
-	environmenttypes "github.com/blox/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/deployment/types"
+	environmenttypes "github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
 )
 
 type EventType string

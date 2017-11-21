@@ -16,11 +16,11 @@ package main
 import (
 	"fmt"
 
-	"github.com/blox/blox/daemon-scheduler/logger"
-	"github.com/blox/blox/daemon-scheduler/pkg/cmd"
-	"github.com/blox/blox/daemon-scheduler/pkg/config"
-	"github.com/blox/blox/daemon-scheduler/pkg/scheduler"
-	"github.com/blox/blox/daemon-scheduler/versioning"
+	"github.com/goguardian/blox/daemon-scheduler/logger"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/cmd"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/config"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/scheduler"
+	"github.com/goguardian/blox/daemon-scheduler/versioning"
 	log "github.com/cihub/seelog"
 
 	"os"

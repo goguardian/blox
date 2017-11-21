@@ -17,7 +17,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/mocks"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/mocks"
 	etcd "github.com/coreos/etcd/clientv3"
 	mvccpb "github.com/coreos/etcd/mvcc/mvccpb"
 	"github.com/golang/mock/gomock"

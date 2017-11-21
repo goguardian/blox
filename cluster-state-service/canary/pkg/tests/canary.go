@@ -15,7 +15,7 @@ package tests
 
 import (
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/blox/blox/cluster-state-service/canary/pkg/wrappers"
+	"github.com/goguardian/blox/cluster-state-service/canary/pkg/wrappers"
 	"github.com/pkg/errors"
 )
 
