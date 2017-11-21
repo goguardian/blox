@@ -57,8 +57,8 @@ build-in-docker:
 	@docker build -f scripts/dockerfiles/Dockerfile.build -t "bloxoss/daemon-scheduler:make" .
 	@docker run --net=none \
 	    -v "$(shell pwd)/out:/out" \
-	    -v "$(shell pwd):/go/src/github.com/blox/blox/daemon-scheduler" \
-	    -v "$(shell dirname ${ROOT}):/go/src/github.com/blox/blox" \
+	    -v "$(shell pwd):/go/src/github.com/goguardian/blox/daemon-scheduler" \
+	    -v "$(shell dirname ${ROOT}):/go/src/github.com/goguardian/blox" \
 	    "bloxoss/daemon-scheduler:make"
 
 .PHONY: certs

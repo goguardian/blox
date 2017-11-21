@@ -17,8 +17,8 @@ MAINTAINER Amazon Web Services, Inc.
 RUN mkdir -p /out
 VOLUME ['/out']
 
-RUN mkdir -p /go/src/github.com/blox/
+RUN mkdir -p /go/src/github.com/goguardian/
 
-WORKDIR /go/src/github.com/blox/blox/daemon-scheduler
+WORKDIR /go/src/github.com/goguardian/blox/daemon-scheduler
 
 CMD ["make", "build"]

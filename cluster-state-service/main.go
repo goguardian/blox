@@ -16,13 +16,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/blox/blox/cluster-state-service/logger"
+	"github.com/goguardian/blox/cluster-state-service/logger"
 	log "github.com/cihub/seelog"
 
-	"github.com/blox/blox/cluster-state-service/cmd"
-	"github.com/blox/blox/cluster-state-service/config"
-	"github.com/blox/blox/cluster-state-service/handler/run"
-	"github.com/blox/blox/cluster-state-service/versioning"
+	"github.com/goguardian/blox/cluster-state-service/cmd"
+	"github.com/goguardian/blox/cluster-state-service/config"
+	"github.com/goguardian/blox/cluster-state-service/handler/run"
+	"github.com/goguardian/blox/cluster-state-service/versioning"
 	"os"
 )
 

@@ -17,10 +17,10 @@ import (
 	"context"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/blox/blox/cluster-state-service/swagger/v1/generated/models"
-	"github.com/blox/blox/daemon-scheduler/pkg/deployment"
-	"github.com/blox/blox/daemon-scheduler/pkg/environment"
-	"github.com/blox/blox/daemon-scheduler/pkg/facade"
+	"github.com/goguardian/blox/cluster-state-service/swagger/v1/generated/models"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/deployment"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/facade"
 	log "github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )

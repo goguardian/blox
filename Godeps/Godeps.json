@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/blox/blox",
+	"ImportPath": "github.com/goguardian/blox",
 	"GoVersion": "go1.7",
 	"GodepVersion": "v79",
 	"Packages": [

@@ -17,10 +17,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/blox/blox/cluster-state-service/canary/pkg/cmd"
-	"github.com/blox/blox/cluster-state-service/canary/pkg/logger"
-	"github.com/blox/blox/cluster-state-service/canary/pkg/tests"
-	"github.com/blox/blox/cluster-state-service/canary/pkg/wrappers"
+	"github.com/goguardian/blox/cluster-state-service/canary/pkg/cmd"
+	"github.com/goguardian/blox/cluster-state-service/canary/pkg/logger"
+	"github.com/goguardian/blox/cluster-state-service/canary/pkg/tests"
+	"github.com/goguardian/blox/cluster-state-service/canary/pkg/wrappers"
 	log "github.com/cihub/seelog"
 )
 

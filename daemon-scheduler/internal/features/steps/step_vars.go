@@ -13,7 +13,7 @@
 
 package steps
 
-import "github.com/blox/blox/daemon-scheduler/swagger/v1/generated/models"
+import "github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/models"
 
 type Exception struct {
 	exceptionType string

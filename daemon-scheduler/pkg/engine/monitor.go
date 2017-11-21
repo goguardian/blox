@@ -17,7 +17,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/environment"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment"
 	log "github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )

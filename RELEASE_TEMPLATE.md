@@ -4,7 +4,7 @@
 ## Activity Details
 This activity is to: Release Blox version v$$blox_version$$ by merging the release-$$blox_version$$ branch into the dev and master branches on GitHub, and pushing new Blox images up to Docker Hub.
 
-The purpose of this change is to: Release the latest features and bug fixes for Blox to allow consumers to start using the new functionality. For more details about the specific changes being released, refer to the $$blox_version$$ release notes [here](https://github.com/blox/blox/blob/dev/CHANGELOG.md).
+The purpose of this change is to: Release the latest features and bug fixes for Blox to allow consumers to start using the new functionality. For more details about the specific changes being released, refer to the $$blox_version$$ release notes [here](https://github.com/goguardian/blox/blob/dev/CHANGELOG.md).
 
 The Blox framework version is: v$$blox_version$$ with a git hash of $$github_hash$$
 
@@ -26,7 +26,7 @@ Where are the most likely places this change will fail?
 Errors encountered building the new Blox images or pushing them up to Docker Hub.
 
 ## Hostname or Service
-GitHub: https://github.com/blox/blox  
+GitHub: https://github.com/goguardian/blox  
 Docker Hub: https://hub.docker.com/u/bloxoss/
 
 ## Timeline / Activity Plan
@@ -116,7 +116,7 @@ $ git push origin :refs/tags/v$$blox_version$$
 
 #### Draft a v$$blox_version$$ release in GitHub against the master branch
 ```
-Open up a new browser window to [here](https://github.com/blox/blox/releases/new)
+Open up a new browser window to [here](https://github.com/goguardian/blox/releases/new)
 Enter the following details:
  Tag version: v$$blox_version$$
  Target: master
@@ -137,7 +137,7 @@ $ echo $?
 ```
 
 #### Ensure that the cluster-state-service end-to-end tests pass
-Required setup details are listed [here](https://github.com/blox/blox/blob/dev/cluster-state-service/internal/Readme.md). It is assumed that the cluster-state-service is running locally.
+Required setup details are listed [here](https://github.com/goguardian/blox/blob/dev/cluster-state-service/internal/Readme.md). It is assumed that the cluster-state-service is running locally.
 
 ```
 $ git checkout release-$$blox_version$$
@@ -159,7 +159,7 @@ $ echo $?
 ```
 
 #### Ensure that the daemon-scheduler end-to-end tests pass
-Required setup details are listed [here](https://github.com/blox/blox/blob/dev/daemon-scheduler/internal/features/README.md). It is assumed that the daemon-scheduler is running locally.
+Required setup details are listed [here](https://github.com/goguardian/blox/blob/dev/daemon-scheduler/internal/features/README.md). It is assumed that the daemon-scheduler is running locally.
 
 ```
 $ git checkout release-$$blox_version$$
@@ -171,7 +171,7 @@ $ echo $?
 ```
 
 #### Ensure that the daemon-scheduler integration tests pass
-Required setup details are listed [here](https://github.com/blox/blox/blob/dev/daemon-scheduler/internal/features/README.md). It is assumed that the daemon-scheduler is running locally.
+Required setup details are listed [here](https://github.com/goguardian/blox/blob/dev/daemon-scheduler/internal/features/README.md). It is assumed that the daemon-scheduler is running locally.
 
 ```
 $ git checkout release-$$blox_version$$
@@ -258,7 +258,7 @@ Blox Daemon Scheduler:
 ```
 
 #### Start the ECR images for e2e and integration testing
-Required setup details are listed [here](https://github.com/blox/blox/blob/dev/deploy/README.md#local-installation). Stop all running Docker containers before proceeding.
+Required setup details are listed [here](https://github.com/goguardian/blox/blob/dev/deploy/README.md#local-installation). Stop all running Docker containers before proceeding.
 ```
 $ docker ps | awk '{print $1}' | grep -v CONTAINER | xargs docker stop
 $ git checkout release-$$blox_version$$
@@ -297,7 +297,7 @@ $ git push -v upstream 'release-$$blox_version$$:master'
 
 #### Publish the v$$blox_version$$ release in GitHub
 ```
-Open up a new browser window to [here](https://github.com/blox/blox/releases)
+Open up a new browser window to [here](https://github.com/goguardian/blox/releases)
 Click on the Edit button next to 'Release v$$blox_version$$'
 Ensure the following details:
  Tag version: v$$blox_version$$
@@ -391,10 +391,10 @@ Blox Daemon Scheduler:
 ```
 
 #### Verify that doing a Local Deployment of the v$$blox_version$$ tag shows the correct versions
-Required setup details are listed [here](https://github.com/blox/blox/blob/dev/deploy/README.md#local-installation). Stop all running Docker containers before proceeding.
+Required setup details are listed [here](https://github.com/goguardian/blox/blob/dev/deploy/README.md#local-installation). Stop all running Docker containers before proceeding.
 ```
 $ docker ps | awk '{print $1}' | grep -v CONTAINER | xargs docker stop
-$ git clone https://github.com/blox/blox.git
+$ git clone https://github.com/goguardian/blox.git
 $ cd ./blox/deploy/docker/conf/
 $ git checkout v$$blox_version$$
 $ sed -i '' 's/<region>/$$aws_region$$/g' docker-compose.yml
@@ -407,10 +407,10 @@ e2214884f981   bloxoss/cluster-state-service:$$blox_version$$   Up      <- Shoul
 ```
 
 #### Verify that doing a CloudFormation Deployment of the v$$blox_version$$ tag shows the correct versions
-Required setup details are listed [here](https://github.com/blox/blox/blob/dev/deploy/README.md#aws-installation).
+Required setup details are listed [here](https://github.com/goguardian/blox/blob/dev/deploy/README.md#aws-installation).
 ```
 # Create /tmp/blox_parameters.json following the instructions on the README.md URL above.
-$ git clone https://github.com/blox/blox.git
+$ git clone https://github.com/goguardian/blox.git
 $ cd ./blox/deploy/aws/conf/
 $ git checkout v$$blox_version$$
 $ aws --region $$aws_region$$ cloudformation create-stack --stack-name BloxAws --template-body file://./cloudformation_template.json --capabilities CAPABILITY_NAMED_IAM --parameters file:///tmp/blox_parameters.json
@@ -423,7 +423,7 @@ e2214884f981   bloxoss/cluster-state-service:$$blox_version$$   Up      <- Shoul
 ```
 
 ## Validation Checklist
-- [ ] Verify that the Blox GitHub release < https://github.com/blox/blox/releases/tag/v$$blox_version$$ > looks correct and points to the correct revision. You should see the git hash '$$github_hash$$' on this page.
+- [ ] Verify that the Blox GitHub release < https://github.com/goguardian/blox/releases/tag/v$$blox_version$$ > looks correct and points to the correct revision. You should see the git hash '$$github_hash$$' on this page.
 - [ ] Verify that the pull request from the release-$$blox_version$$ branch to the master branch in GitHub is closed.
 - [ ] Verify that doing a docker pull of all six tags works.
 - [ ] Verify that doing a docker run of all six tags shows the correct version and commit hash.

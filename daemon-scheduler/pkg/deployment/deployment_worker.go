@@ -18,11 +18,11 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/ecs"
-	"github.com/blox/blox/daemon-scheduler/pkg/environment"
-	deploymenttypes "github.com/blox/blox/daemon-scheduler/pkg/deployment/types"
-	environmenttypes "github.com/blox/blox/daemon-scheduler/pkg/environment/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/facade"
-	"github.com/blox/blox/daemon-scheduler/pkg/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment"
+	deploymenttypes "github.com/goguardian/blox/daemon-scheduler/pkg/deployment/types"
+	environmenttypes "github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/facade"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/types"
 	log "github.com/cihub/seelog"
 	"github.com/pkg/errors"
 )

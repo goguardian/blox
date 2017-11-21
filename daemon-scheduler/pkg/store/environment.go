@@ -16,9 +16,9 @@ package store
 import (
 	"context"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/environment/types"
-	"github.com/blox/blox/daemon-scheduler/pkg/json"
-	storetypes "github.com/blox/blox/daemon-scheduler/pkg/store/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/json"
+	storetypes "github.com/goguardian/blox/daemon-scheduler/pkg/store/types"
 	"github.com/pkg/errors"
 )
 

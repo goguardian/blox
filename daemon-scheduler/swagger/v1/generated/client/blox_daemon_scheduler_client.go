@@ -22,7 +22,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/client/operations"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/client/operations"
 )
 
 // Default blox daemon scheduler HTTP client.

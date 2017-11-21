@@ -18,8 +18,8 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/blox/blox/cluster-state-service/internal/features/wrappers"
-	"github.com/blox/blox/cluster-state-service/swagger/v1/generated/models"
+	"github.com/goguardian/blox/cluster-state-service/internal/features/wrappers"
+	"github.com/goguardian/blox/cluster-state-service/swagger/v1/generated/models"
 	. "github.com/gucumber/gucumber"
 )
 

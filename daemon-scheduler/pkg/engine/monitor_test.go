@@ -18,8 +18,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/environment/types"
-	mocks "github.com/blox/blox/daemon-scheduler/pkg/mocks"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/environment/types"
+	mocks "github.com/goguardian/blox/daemon-scheduler/pkg/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"

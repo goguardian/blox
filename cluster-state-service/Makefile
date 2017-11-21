@@ -42,8 +42,8 @@ build-in-docker:
 	@docker build -f scripts/dockerfiles/Dockerfile.build -t "bloxoss/cluster-state-service-build:make" .
 	@docker run --net=none \
 	    -v "$(shell pwd)/out:/out" \
-	    -v "$(shell pwd):/go/src/github.com/blox/blox/cluster-state-service" \
-	    -v "$(shell dirname ${ROOT}):/go/src/github.com/blox/blox" \
+	    -v "$(shell pwd):/go/src/github.com/goguardian/blox/cluster-state-service" \
+	    -v "$(shell dirname ${ROOT}):/go/src/github.com/goguardian/blox" \
 	    "bloxoss/cluster-state-service-build:make"
 
 .PHONY: certs

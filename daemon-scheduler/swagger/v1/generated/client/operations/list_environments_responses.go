@@ -24,7 +24,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/models"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/models"
 )
 
 // ListEnvironmentsReader is a Reader for the ListEnvironments structure.

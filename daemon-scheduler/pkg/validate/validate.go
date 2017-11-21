@@ -16,7 +16,7 @@ package validate
 import (
 	"regexp"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/regex"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/regex"
 )
 
 // IsClusterName validates a cluster name against the cluster name regex

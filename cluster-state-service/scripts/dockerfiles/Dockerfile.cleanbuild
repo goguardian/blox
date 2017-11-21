@@ -17,7 +17,7 @@ MAINTAINER Amazon Web Services, Inc.
 RUN mkdir -p /out
 VOLUME ['/out']
 
-RUN mkdir -p /go/src/github.com/blox/
+RUN mkdir -p /go/src/github.com/goguardian/
 
 COPY ./scripts/cleanbuild /scripts/cleanbuild
 

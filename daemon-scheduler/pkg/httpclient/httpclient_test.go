@@ -17,7 +17,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/mocks"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/mocks"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"

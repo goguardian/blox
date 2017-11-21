@@ -17,7 +17,7 @@
 package facade
 
 import (
-	models "github.com/blox/blox/cluster-state-service/swagger/v1/generated/models"
+	models "github.com/goguardian/blox/cluster-state-service/swagger/v1/generated/models"
 	gomock "github.com/golang/mock/gomock"
 )
 

@@ -23,9 +23,9 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/blox/blox/daemon-scheduler/internal/features/wrappers"
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/client/operations"
-	"github.com/blox/blox/daemon-scheduler/swagger/v1/generated/models"
+	"github.com/goguardian/blox/daemon-scheduler/internal/features/wrappers"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/client/operations"
+	"github.com/goguardian/blox/daemon-scheduler/swagger/v1/generated/models"
 	. "github.com/gucumber/gucumber"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"

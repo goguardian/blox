@@ -24,7 +24,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/blox/blox/cluster-state-service/swagger/v1/generated/models"
+	"github.com/goguardian/blox/cluster-state-service/swagger/v1/generated/models"
 )
 
 // ListInstancesReader is a Reader for the ListInstances structure.

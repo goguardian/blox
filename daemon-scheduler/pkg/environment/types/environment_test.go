@@ -17,7 +17,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/blox/blox/daemon-scheduler/pkg/deployment/types"
+	"github.com/goguardian/blox/daemon-scheduler/pkg/deployment/types"
 	"github.com/pborman/uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"

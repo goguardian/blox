@@ -14,7 +14,7 @@
 package e2einstancesteps
 
 import (
-	"github.com/blox/blox/cluster-state-service/internal/features/wrappers"
+	"github.com/goguardian/blox/cluster-state-service/internal/features/wrappers"
 	. "github.com/gucumber/gucumber"
 )
 

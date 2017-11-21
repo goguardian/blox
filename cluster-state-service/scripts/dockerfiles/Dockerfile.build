@@ -17,9 +17,9 @@ MAINTAINER Amazon Web Services, Inc.
 RUN mkdir -p /out
 VOLUME ['/out']
 
-RUN mkdir -p /go/src/github.com/blox/
+RUN mkdir -p /go/src/github.com/goguardian/
 
-WORKDIR /go/src/github.com/blox/blox/cluster-state-service
+WORKDIR /go/src/github.com/goguardian/blox/cluster-state-service
 
 CMD ["make", "build"]
 

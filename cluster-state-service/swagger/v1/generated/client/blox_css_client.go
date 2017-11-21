@@ -22,7 +22,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/blox/blox/cluster-state-service/swagger/v1/generated/client/operations"
+	"github.com/goguardian/blox/cluster-state-service/swagger/v1/generated/client/operations"
 )
 
 // Default blox CSS HTTP client.
